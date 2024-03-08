@@ -14,18 +14,18 @@ class AzureSqlDatabase:
             self.conn = pyodbc.connect(self.connection_string)
             print(f"Connected to {self.server}...")
         except:
-            print(f"Could not connect to the server...")
+            print(f"Something went wrong AzureSqlDatabase.connect")
 
     def execute_query(self, query : str):
         try:
             cursor = self.conn.cursor()
             cursor.execute(query)
             rows = cursor.fetchall()
-            for row in rows:
-                print(row)
+            columns = cursor.description
             cursor.close()
+            return rows, columns
         except pyodbc.Error as e:
-            print(f"Error executing query", e)
+            return (f"Something went wrong AzureSqlDatabase.execute_query", e)
     
     def disconnect(self):
         self.conn.close()

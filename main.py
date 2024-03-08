@@ -1,3 +1,4 @@
+import pandas as pd
 from azure_bindings import AzureDBconfig
 from azuresqldb import AzureSqlDatabase
 
@@ -9,6 +10,9 @@ azuresqldb = AzureSqlDatabase(server=azureconfig["server"],
                               driver=azureconfig["driver"])
 azuresqldb.connect()
 
-azuresqldb.execute_query("SELECT * FROM [jeographserverauthsink].[listingstable1];")
+rows, columns = azuresqldb.execute_query("SELECT * FROM [jeographserverauthsink].[listingstable1];")
+
+print([row for row in rows])
+print([column for column in columns])
 
 azuresqldb.disconnect()
