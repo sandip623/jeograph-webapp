@@ -2,6 +2,6 @@
 
 - consider a surrogate key
 
-- pyodbc library for db connectivity
+- consider storing api keys i.e., for gmaps in a cloud vault
 
-AIzaSyDNgl2UOlCrczRmcmIi8zJRNgYbaRx6paY
+- pyodbc library for db connectivity

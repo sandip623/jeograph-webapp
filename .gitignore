@@ -1,3 +1,4 @@
 .env
 /venv
 /azure_bindings/azuredbconfig.py
+/gcp_bindings/gcp_creds.py
