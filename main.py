@@ -12,7 +12,9 @@ azuresqldb.connect()
 
 rows, columns = azuresqldb.execute_query("SELECT * FROM [jeographserverauthsink].[listingstable1];")
 
-print([row for row in rows])
-print([column for column in columns])
+data = [tuple(row) for row in rows]
+
+df = pd.DataFrame(data, columns=columns)
+print(df)
 
 azuresqldb.disconnect()
