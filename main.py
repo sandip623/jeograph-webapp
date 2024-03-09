@@ -1,4 +1,5 @@
 import pandas as pd
+import gmaps 
 from azure_bindings import AzureDBconfig
 from azuresqldb import AzureSqlDatabase, stored_procs
 
