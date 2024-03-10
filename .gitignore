@@ -1,6 +1,4 @@
-.env
 /venv
-/azure_bindings/azuredbconfig.py
-/gcp_bindings/gcp_creds.py
-/gcp_bindings
-.gcp_bindings
+../venv
+venv
+/venv

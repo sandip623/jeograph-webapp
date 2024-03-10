@@ -6,4 +6,4 @@
 
 - pyodbc library for db connectivity
 
-react js, flask = client, server
+react js, flask = client (UI), server (data processor)
