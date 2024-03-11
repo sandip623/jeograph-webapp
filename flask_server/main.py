@@ -18,15 +18,19 @@ def initialize_database():
 # Flask routes
 @app.route("/api/locations", methods=["GET"])
 def get_locations():
-    azuresqldb = initialize_database()
-    azuresqldb.connect()
-    rows, columns = azuresqldb.execute_query(stored_procs["getJobCountByLocation"])
-    azuresqldb.disconnect()
-    # transform retrieved data into python readable format
-    data = [tuple(row) for row in rows]
-    columns = [column[0] for column in columns]
-    df = pd.DataFrame(data, columns=columns)
-    return jsonify(df[['lat', 'lng']].to_dict(orient='records'))
+    try:
+        azuresqldb = initialize_database()
+        azuresqldb.connect()
+        rows, columns = azuresqldb.execute_query(stored_procs["getJobCountByLocation"])
+        azuresqldb.disconnect()
+        # transform retrieved data into python readable format
+        data = [tuple(row) for row in rows]
+        columns = [column[0] for column in columns]
+        df = pd.DataFrame(data, columns=columns)
+        return jsonify(df[['lat', 'lng']].to_dict(orient='records'))
+    except Exception as e:
+        print(f"An error occured at /api/locations: {e}")
+        return jsonify("An error occured at /api/locations")
 
 if __name__ == '__main__':
     app.run(debug=True)
