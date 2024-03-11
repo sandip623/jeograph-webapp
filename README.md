@@ -7,3 +7,7 @@
 - pyodbc library for db connectivity
 
 react js, flask = client (UI), server (data processor)
+
+- configure cors (flask_cors was used)
+
+- npm install google-maps-react 

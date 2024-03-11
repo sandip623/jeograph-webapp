@@ -2,3 +2,4 @@ pyodbc
 pandas
 gmaps
 flask
+flask_cors
