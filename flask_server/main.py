@@ -6,7 +6,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-# Enable CORS for all routes - allows react frontend to access API endpoints
+# Enable CORS for all routes - allows react frontend to access API endpoints (note - in production this would need better handling for security)
 CORS(app)
 
 # Database setup
