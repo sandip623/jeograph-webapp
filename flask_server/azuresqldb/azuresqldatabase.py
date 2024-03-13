@@ -25,7 +25,8 @@ class AzureSqlDatabase:
             cursor.close()
             return rows, columns
         except pyodbc.Error as e:
-            return (f"Something went wrong AzureSqlDatabase.execute_query", e)
+            print (f"Something went wrong AzureSqlDatabase.execute_query, {e}")
+            return (f"Something went wrong AzureSqlDatabase.execute_query, {e}")
     
     def disconnect(self):
         self.conn.close()
