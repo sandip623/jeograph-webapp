@@ -13,3 +13,5 @@ react js, flask = client (UI), server (data processor)
 - npm install google-maps-react 
 
 gcp project - geographgeocodeapikey
+
+- since backend/frontend are separate components - must setup containers separately
