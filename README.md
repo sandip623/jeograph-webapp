@@ -6,7 +6,7 @@
 
 - pyodbc library for db connectivity
 
-react js, flask = client (UI), server (data processor)
+react js, flask[async] = client (UI), server (data processor)
 
 - configure cors (flask_cors was used)
 
@@ -15,3 +15,5 @@ react js, flask = client (UI), server (data processor)
 gcp project - geographgeocodeapikey
 
 - since backend/frontend are separate components - must setup containers separately
+
+- replace flask builtin-wsgi with gunicorn wsgi in Docker config for enabling container-external access to app.
