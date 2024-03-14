@@ -1,22 +1,29 @@
-# Use the official Python image as a base
-FROM python:3.9-slim
+# Use the official Python image for Windows as a base
+FROM python:3.9-slim-buster
 
-# Set the working directory in the container to /flask_server
-WORKDIR /flask_server
+# Set the working directory in the container
+WORKDIR /
 
-# Copy the entire flask_server directory into the container
-COPY flask_server/ .
-
-# Copy the requirements.txt file into the container
+# Copy the Flask application files into the container
+COPY /flask_server .
 COPY requirements.txt .
 
-# Install dependencies
+# Install any necessary dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install ODBC Driver Dependencies
-RUN apt-get update && apt-get install -y unixodbc unixodbc-dev
+# Line 15 to 19 are for installnig OBDC driver dependencies
+ENV ACCEPT_EULA=Y
+RUN apt-get update -y && apt-get update \
+  && apt-get install -y --no-install-recommends curl gcc g++ gnupg unixodbc-dev
 
-# Expose the port on which the Flask application will run
+RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+  && curl https://packages.microsoft.com/config/debian/10/prod.list > /etc/apt/sources.list.d/mssql-release.list \
+  && apt-get update \
+  && apt-get install -y --no-install-recommends --allow-unauthenticated msodbcsql17 mssql-tools \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile \
+  && echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+
+# Expose the port on which the Gunicorn server will run
 EXPOSE 5000
 
 # Command to run the Flask application using Gunicorn

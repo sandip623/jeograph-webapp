@@ -37,11 +37,30 @@ def get_locations():
         return jsonify("An error occured at /api/locations")
 
 # treat API key as data that is encapsulated within the flask backend
-@app.route("/api/gmaps-api-key")
+@app.route("/api/gmaps-api-key", methods=["GET"])
 def get_gmaps_api_key():
     gmaps_api_key = ApiServiceKeys().get_service_key()["googlemaps"]
     return jsonify({'gmaps-api-key':gmaps_api_key})
 
+@app.route("/", methods=["GET"])
+def index():
+    try: 
+        print("loading index...")
+        azuresqldb = initialize_database()
+        print("initialised db")
+        azuresqldb.connect()
+        print("connected db")
+        rows, columns = azuresqldb.execute_query(stored_procs["getJobCountByLocation"])
+        print(rows, columns)
+        azuresqldb.disconnect()
+        print("disconnected from db")
+        return "Hello World!"
+    except:
+        if azuresqldb:
+            return "azuresqldb initialised"
+        else:
+            return "Goodbye World!"
+
 if __name__ == '__main__':
     # the client-side fetch requests should match this port (at least for development purpose)
-    app.run(debug=True, port=5000)
+    app.run(debug=True, host='0.0.0.0' ,port=5000)
