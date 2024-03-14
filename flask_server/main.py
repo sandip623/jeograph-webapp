@@ -45,21 +45,9 @@ def get_gmaps_api_key():
 @app.route("/", methods=["GET"])
 def index():
     try: 
-        print("loading index...")
-        azuresqldb = initialize_database()
-        print("initialised db")
-        azuresqldb.connect()
-        print("connected db")
-        rows, columns = azuresqldb.execute_query(stored_procs["getJobCountByLocation"])
-        print(rows, columns)
-        azuresqldb.disconnect()
-        print("disconnected from db")
-        return "Hello World!"
-    except:
-        if azuresqldb:
-            return "azuresqldb initialised"
-        else:
-            return "Goodbye World!"
+        return "Jeograph /index..."
+    except Exception as e:
+        return f"Error at /index: {e}"
 
 if __name__ == '__main__':
     # the client-side fetch requests should match this port (at least for development purpose)
