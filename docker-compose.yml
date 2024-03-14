@@ -1,0 +1,19 @@
+version: '3.8'  # Docker Compose file version
+
+services:  # Services section defines individual containers in the application
+
+  flask-server:  # Define a service for Flask backend
+    image: jeocontainerregistry.azurecr.io/jeograph-flask-server:jeoacrepo  # Docker image for Flask backend service
+    ports:  # Port mapping for exposing the service
+      - "5000:5000"  # Expose Flask server port (host:container)
+    # Other configuration options for Flask backend service can be added here
+
+  react-client:  # Define a service for React client
+    image: jeocontainerregistry.azurecr.io/jeograph-react-client:jeoacrepo  # Docker image for React client service
+    ports:  # Port mapping for exposing the service
+      - "80:80"  # Expose React client port (host:container)
+    # Other configuration options for React client service can be added here
+
+  webscraper:  # Define another service if needed
+    image: jeocontainerregistry.azurecr.io/jeograph-webscraper:jeoacrepo  # Docker image for another service
+    # Add configuration options for another service if needed

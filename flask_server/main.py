@@ -42,12 +42,14 @@ def get_gmaps_api_key():
     gmaps_api_key = ApiServiceKeys().get_service_key()["googlemaps"]
     return jsonify({'gmaps-api-key':gmaps_api_key})
 
+"""
 @app.route("/", methods=["GET"])
 def index():
     try: 
         return "Jeograph /index..."
     except Exception as e:
         return f"Error at /index: {e}"
+"""
 
 if __name__ == '__main__':
     # the client-side fetch requests should match this port (at least for development purpose)
