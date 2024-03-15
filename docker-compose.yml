@@ -11,7 +11,7 @@ services:  # Services section defines individual containers in the application
   react-client:  # Define a service for React client
     image: jeocontainerregistry.azurecr.io/jeograph-react-client:jeoacrepo  # Docker image for React client service
     ports:  # Port mapping for exposing the service
-      - "80:80"  # Expose React client port (host:container)
+      - "80:3000"  # Expose React client port (host:container)
     # Other configuration options for React client service can be added here
 
   webscraper:  # Define another service if needed

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import BASE_URL from './config.js'; // import base URL from configuration file 
 
 // This component represents the map and its markers
 const MapContainer = ({ google }) => {
@@ -18,7 +19,8 @@ const MapContainer = ({ google }) => {
   const fetchData = async () => {
     try {
       // Fetch data from the Flask backend API endpoint
-      const response = await fetch('http://127.0.0.1:5000/api/locations');
+      // const response = await fetch('http://127.0.0.1:5000/api/locations');
+      const response = await fetch(`${BASE_URL}/api/locations`);
       // Parse the response as JSON
       const jsonData = await response.json();
       // Set the fetched data to the state
@@ -40,7 +42,8 @@ const MapContainer = ({ google }) => {
 
   const fetchApiKey = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/gmaps-api-key');
+      // const response = await fetch('http://127.0.0.1:5000/api/gmaps-api-key');
+      const response = await fetch(`${BASE_URL}/api/gmaps-api-key`);
       const jsonData = await response.json();
       setApiKey(jsonData.api_key);
     } catch (error) {

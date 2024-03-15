@@ -47,3 +47,5 @@ i.e., cmd: docker tag jeograph-flask-server jeocontainerregistry.azurecr.io/jeog
 --                                                                                                         [ docker compose file defines services that make up the application (i.e., microservices)]
 --                        jeographmultiservice.azurewebsites.net
 -- once deployed test via resource overview page...
+
+# note - ensure react frontend fetch requests are pointing to flask-server in azure endpoint
