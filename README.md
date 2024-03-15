@@ -1,3 +1,7 @@
+# NB : all azure resources deleted to stop charges incurring - see 'Azureresources.csv'
+# NB : this will render the app unexecutable but the microesrvices have been built with reproducability in mind 
+#    : though a full resource group creation and resource(s) allocation may be necessary...
+
 .env configuration hidden
 
 - consider a surrogate key
@@ -49,3 +53,5 @@ i.e., cmd: docker tag jeograph-flask-server jeocontainerregistry.azurecr.io/jeog
 -- once deployed test via resource overview page...
 
 # note - ensure react frontend fetch requests are pointing to flask-server in azure endpoint
+
+-- also good practice to handle default routing in react frontend component.

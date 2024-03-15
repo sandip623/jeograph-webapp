@@ -1,0 +1,11 @@
+﻿NAME,TYPE,RESOURCE GROUP,LOCATION,SUBSCRIPTION,
+"Application Insights Smart Detection","Action group","dev-jeograph","Global","Azure subscription 1"
+"ASP-devjeograph-9055","App Service plan","dev-jeograph","UK South","Azure subscription 1"
+"ASP-devjeograph-aee7","App Service plan","dev-jeograph","East US","Azure subscription 1"
+"jeocontainerregistry","Container registry","dev-jeograph","UK South","Azure subscription 1"
+"jeographdatafactory","Data factory (V2)","dev-jeograph","UK South","Azure subscription 1"
+"jeographserverauthdb (jeographsqlserverauth/jeographserverauthdb)","SQL database","dev-jeograph","UK South","Azure subscription 1"
+"jeographsqlserverauth","SQL server","dev-jeograph","UK South","Azure subscription 1"
+"jeographstore001","Storage account","dev-jeograph","UK South","Azure subscription 1"
+"jeographwebservice","App Service","dev-jeograph","UK South","Azure subscription 1"
+"jeoreactservice","App Service","dev-jeograph","East US","Azure subscription 1"
