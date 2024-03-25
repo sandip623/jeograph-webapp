@@ -5,6 +5,8 @@
 # Here is a sample of the final webmap output:
 ![Alt text](jeograph-map-plot.jpg)
 
+This gives us an immediate visual insights into where each of the jobs are located, and other aggregative information i.e., total number of jobs at x, y. 
+
 .env configuration hidden
 
 - consider a surrogate key
