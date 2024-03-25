@@ -7,6 +7,9 @@
 
 This gives us an immediate visual insights into where each of the jobs are located, and other aggregative information i.e., total number of jobs at x, y. 
 
+
+
+Extra developer notes (can be ignored for readers):
 .env configuration hidden
 
 - consider a surrogate key
