@@ -1,6 +1,6 @@
-# NB : all azure resources deleted to stop charges incurring - see 'Azureresources.csv'
-# NB : this will render the app unexecutable but the microesrvices have been built with reproducability in mind 
-#    : though a full resource group creation and resource(s) allocation may be necessary...
+- NB : all azure resources deleted to stop charges incurring - see 'Azureresources.csv'
+- NB : this will render the app unexecutable but the microesrvices have been built with reproducability in mind 
+-    : though a full resource group creation and resource(s) allocation may be necessary...
 
 # Here is a sample of the final webmap output:
 ![Alt text](jeograph-map-plot.jpg)
