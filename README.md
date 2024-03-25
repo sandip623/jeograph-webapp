@@ -6,9 +6,11 @@
 ![Alt text](jeograph-map-plot.jpg)
 
 This gives us an immediate visual insights into where each of the jobs are located, and other aggregative information i.e., total number of jobs at x, y. 
+To understand how the raw data was collected and serviced for this application, refer to: https://github.com/sandip623/jeograph-webscrape 
 
-
-
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
 Extra developer notes (can be ignored for readers):
 .env configuration hidden
 
